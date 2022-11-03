@@ -38,7 +38,7 @@ $('#hitung').click((e) => {
     : (nilai['huruf'] = '0');
 
   let hitungIp = hitungAngka / 20 - 1;
-  hitungIp <= 0 ? (nilai['ip'] = 0) : (nilai['ip'] = hitungIp);
+  hitungIp <= 0 ? (nilai['ip'] = 0) : (nilai['ip'] = hitungIp.toFixed(2));
 
   $('#nilai-akhir').val(nilai.angka);
   $('#nilai-huruf').val(nilai.huruf);
