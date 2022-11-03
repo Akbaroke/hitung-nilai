@@ -1,4 +1,4 @@
-$('#hitung').click(function (e) {
+$('#hitung').click((e) => {
   e.preventDefault();
   const absen = $('#absen').val();
   const tugas = $('#tugas').val();
@@ -15,26 +15,37 @@ $('#hitung').click(function (e) {
   nilai['angka'] = hitungAngka;
 
   na = parseInt(nilai.angka);
-  na >= 85 ? nilai['huruf'] = 'A'
-  : na >= 80 && na <= 84 ? nilai['huruf'] = 'A-'
-  : na >= 75 && na <= 79 ? nilai['huruf'] = 'B+'
-  : na >= 70 && na <= 74 ? nilai['huruf'] = 'B'
-  : na >= 65 && na <= 69 ? nilai['huruf'] = 'B-'
-  : na >= 60 && na <= 64 ? nilai['huruf'] = 'C+'
-  : na >= 55 && na <= 59 ? nilai['huruf'] = 'C'
-  : na >= 50 && na <= 54 ? nilai['huruf'] = 'C-'
-  : na >= 40 && na <= 50 ? nilai['huruf'] = 'D'
-  : na < 40 ? nilai['huruf'] = 'E' : nilai['huruf'] = '0';
+  na >= 85
+    ? (nilai['huruf'] = 'A')
+    : na >= 80 && na <= 84
+    ? (nilai['huruf'] = 'A-')
+    : na >= 75 && na <= 79
+    ? (nilai['huruf'] = 'B+')
+    : na >= 70 && na <= 74
+    ? (nilai['huruf'] = 'B')
+    : na >= 65 && na <= 69
+    ? (nilai['huruf'] = 'B-')
+    : na >= 60 && na <= 64
+    ? (nilai['huruf'] = 'C+')
+    : na >= 55 && na <= 59
+    ? (nilai['huruf'] = 'C')
+    : na >= 50 && na <= 54
+    ? (nilai['huruf'] = 'C-')
+    : na >= 40 && na <= 50
+    ? (nilai['huruf'] = 'D')
+    : na < 40
+    ? (nilai['huruf'] = 'E')
+    : (nilai['huruf'] = '0');
 
   let hitungIp = hitungAngka / 20 - 1;
-  hitungIp <= 0 ? nilai['ip'] = 0 : nilai['ip'] = hitungIp;
+  hitungIp <= 0 ? (nilai['ip'] = 0) : (nilai['ip'] = hitungIp);
 
   $('#nilai-akhir').val(nilai.angka);
   $('#nilai-huruf').val(nilai.huruf);
   $('#nilai-ip').val(nilai.ip);
 });
 
-$('#clear').click(function (e) { 
+$('#clear').click(function (e) {
   e.preventDefault();
   $('#absen').val('');
   $('#tugas').val('');
